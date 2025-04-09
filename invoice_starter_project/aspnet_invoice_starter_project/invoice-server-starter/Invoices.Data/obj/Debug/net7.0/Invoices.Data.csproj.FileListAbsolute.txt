@@ -1,0 +1,14 @@
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\bin\Debug\net7.0\Invoices.Data.deps.json
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\bin\Debug\net7.0\Invoices.Data.runtimeconfig.json
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\bin\Debug\net7.0\Invoices.Data.dll
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\bin\Debug\net7.0\Invoices.Data.pdb
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.csproj.AssemblyReference.cache
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.AssemblyInfoInputs.cache
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.AssemblyInfo.cs
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.csproj.CoreCompileInputs.cache
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.dll
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\refint\Invoices.Data.dll
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.pdb
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\Invoices.Data.genruntimeconfig.cache
+C:\Users\Dan\Desktop\PRO-fullstack_project\invoice_starter_project\aspnet_invoice_starter_project\invoice-server-starter\Invoices.Data\obj\Debug\net7.0\ref\Invoices.Data.dll
