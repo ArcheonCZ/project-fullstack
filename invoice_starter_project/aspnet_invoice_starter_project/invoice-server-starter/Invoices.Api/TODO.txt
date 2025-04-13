@@ -1,0 +1,5 @@
+﻿////zakázat zobrazování hidden(smazaných) uživatelů -- úprava udělaná - otestovat
+
+
+///// vytvoření faktury s prázdnými buyer+seller mi vytvoří dva nové Person do databáze
+///// pokud upravím fakturu (konkrétně id seller/buyer) tak se mi přepíše Person v databázi dle upraveného Id 

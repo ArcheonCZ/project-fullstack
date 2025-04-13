@@ -1,25 +1,4 @@
-﻿/*  _____ _______         _                      _
- * |_   _|__   __|       | |                    | |
- *   | |    | |_ __   ___| |___      _____  _ __| | __  ___ ____
- *   | |    | | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / / __|_  /
- *  _| |_   | | | | |  __/ |_ \ V  V / (_) | |  |   < | (__ / /
- * |_____|  |_|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_(_)___/___|
- *
- *                      ___ ___ ___
- *                     | . |  _| . |  LICENCE
- *                     |  _|_| |___|
- *                     |_|
- *
- *    REKVALIFIKAČNÍ KURZY  <>  PROGRAMOVÁNÍ  <>  IT KARIÉRA
- *
- * Tento zdrojový kód je součástí profesionálních IT kurzů na
- * WWW.ITNETWORK.CZ
- *
- * Kód spadá pod licenci PRO obsahu a vznikl díky podpoře
- * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
- * Více informací na http://www.itnetwork.cz/licence
- */
-
+﻿
 using AutoMapper;
 using Invoices.Api.Interfaces;
 using Invoices.Api.Models;
@@ -47,7 +26,7 @@ public class PersonManager : IPersonManager
         return mapper.Map<IList<PersonDto>>(persons);
     }
 
-    public PersonDto GetPerson(ulong personId)
+    public PersonDto GetPerson(uint personId)
     {
         Person? person = personRepository.FindById(personId);
         if (person is null)
@@ -62,20 +41,14 @@ public class PersonManager : IPersonManager
 
         return mapper.Map<PersonDto>(addedPerson);
     }
-  
-    //UpdatePerson s personId (nevhodné, nebot v controleru již hledám osobu a mám tam tedy personDto
-    //public void UpdatePerson(uint personId)
-	//{
-	//	DeletePerson(personId);
-	//	AddPerson(GetPerson(personId));
-	//}
-    public void UpdatePerson(PersonDto person)
-	{
-        ulong personId = person.PersonId;
-		DeletePerson((uint)personId);
-		AddPerson(GetPerson(personId));
-	}
-	public void DeletePerson(uint personId)
+
+    public PersonDto? EditPerson(uint personId, PersonDto personDto)
+    {
+        HidePerson(personId);
+        return AddPerson(personDto);
+    }
+
+    public void DeletePerson(uint personId)
     {
         HidePerson(personId);
     }
@@ -90,5 +63,11 @@ public class PersonManager : IPersonManager
 
         person.Hidden = true;
         return personRepository.Update(person);
+    }
+    public bool IsHidden(uint personId)
+    {
+         Person person=mapper.Map<Person>(GetPerson(personId));
+        
+        return person.Hidden;
     }
 }

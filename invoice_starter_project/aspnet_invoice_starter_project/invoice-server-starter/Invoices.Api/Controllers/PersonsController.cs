@@ -1,24 +1,4 @@
-﻿/*  _____ _______         _                      _
- * |_   _|__   __|       | |                    | |
- *   | |    | |_ __   ___| |___      _____  _ __| | __  ___ ____
- *   | |    | | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / / __|_  /
- *  _| |_   | | | | |  __/ |_ \ V  V / (_) | |  |   < | (__ / /
- * |_____|  |_|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_(_)___/___|
- *
- *                      ___ ___ ___
- *                     | . |  _| . |  LICENCE
- *                     |  _|_| |___|
- *                     |_|
- *
- *    REKVALIFIKAČNÍ KURZY  <>  PROGRAMOVÁNÍ  <>  IT KARIÉRA
- *
- * Tento zdrojový kód je součástí profesionálních IT kurzů na
- * WWW.ITNETWORK.CZ
- *
- * Kód spadá pod licenci PRO obsahu a vznikl díky podpoře
- * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
- * Více informací na http://www.itnetwork.cz/licence
- */
+﻿
 
 using Invoices.Api.Interfaces;
 using Invoices.Api.Models;
@@ -26,62 +6,55 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Invoices.Api.Controllers;
 
-[Route("api")]
+[Route("api/[controller]")]
 [ApiController]
 public class PersonsController : ControllerBase
 {
-    private readonly IPersonManager personManager;
+	private readonly IPersonManager personManager;
 
 
-    public PersonsController(IPersonManager personManager)
-    {
-        this.personManager = personManager;
-    }
-
-
-    [HttpGet("persons")]
-    public IEnumerable<PersonDto> GetPersons()
-    {
-        return personManager.GetAllPersons();
-    }
-
-    [HttpPost("persons")]
-    public IActionResult AddPerson([FromBody] PersonDto person)
-    {
-        PersonDto? createdPerson = personManager.AddPerson(person);
-        return StatusCode(StatusCodes.Status201Created, createdPerson);
-    }
-
-    [HttpGet("person/{personId}")]
-    public IActionResult GetPerson(ulong personId)
-    {
-        PersonDto person = personManager.GetPerson(personId);
-
-        if (person is null)
-            return NotFound();
-
-        return Ok (person);
-    }
-	[HttpPut("person/{personId}")]
-	public IActionResult UpdatePerson(ulong personId)
-    {
-		PersonDto person = personManager.GetPerson(personId);
-        if (person is null)
-			    return NotFound();
-		//personManager.UpdatePerson(personId);
-
-		/////////////////frontend neřešit
-		// AddPerson(person); 
-		// personManager.DeletePerson((uint)personId);
-        //////////////////
-		personManager.UpdatePerson(person);
-        return Ok();
+	public PersonsController(IPersonManager personManager)
+	{
+		this.personManager = personManager;
 	}
 
-    [HttpDelete("persons/{personId}")]
-    public IActionResult DeletePerson(uint personId)
-    {
-        personManager.DeletePerson(personId);
-        return NoContent();
-    }
+
+	[HttpGet]
+	public IEnumerable<PersonDto> GetPersons()
+	{
+		return personManager.GetAllPersons();
+	}
+
+	[HttpPost]
+	public IActionResult AddPerson([FromBody] PersonDto person)
+	{
+		PersonDto? createdPerson = personManager.AddPerson(person);
+		return StatusCode(StatusCodes.Status201Created, createdPerson);
+	}
+
+	[HttpGet("{personId}")]
+	public IActionResult GetPerson(uint personId)
+	{
+		PersonDto? personDto = personManager.GetPerson(personId);
+		Console.WriteLine(personManager.IsHidden(personDto));
+		if (personDto is null || personManager.IsHidden(personId))
+			return NotFound();
+
+		return Ok(personDto);
+	}
+	[HttpPut("{personId}")]
+	public IActionResult EditPerson(uint personId, [FromBody] PersonDto person)
+	{
+		PersonDto? editedPerson = personManager.EditPerson(personId, person);
+		if (person is null)
+			return NotFound();
+		return Ok(editedPerson);
+	}
+
+	[HttpDelete("{personId}")]
+	public IActionResult DeletePerson(uint personId)
+	{
+		personManager.DeletePerson(personId);
+		return NoContent();
+	}
 }
