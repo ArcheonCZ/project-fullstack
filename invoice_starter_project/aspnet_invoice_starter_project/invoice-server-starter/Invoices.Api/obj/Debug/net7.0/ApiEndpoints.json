@@ -19,6 +19,58 @@
   },
   {
     "ContainingType": "Invoices.Api.Controllers.InvoicesController",
+    "Method": "GetPurchases",
+    "RelativePath": "api/identification/{identificationNumber}/purchases",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "identificationNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Invoices.API.Models.InvoiceDto, Invoices.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Invoices.Api.Controllers.InvoicesController",
+    "Method": "GetSales",
+    "RelativePath": "api/identification/{identificationNumber}/sales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "identificationNumber",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Invoices.API.Models.InvoiceDto, Invoices.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Invoices.Api.Controllers.InvoicesController",
     "Method": "GetInvoices",
     "RelativePath": "api/Invoices",
     "HttpMethod": "GET",

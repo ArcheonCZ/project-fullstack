@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Invoices.Api.Interfaces;
+using Invoices.Api.Models;
 using Invoices.API.Models;
 using Invoices.Data.Interfaces;
 using Invoices.Data.Models;
@@ -10,12 +11,14 @@ namespace Invoices.Api.Managers
 	{
 		private readonly IInvoiceRepository invoiceRepository;
 		private readonly IPersonRepository personRepository;
+		private readonly IPersonManager personManager;
 		private readonly IMapper mapper;
 
-		public InvoiceManager(IInvoiceRepository invoiceRepository, IPersonRepository personRepository, IMapper mapper)
+		public InvoiceManager(IInvoiceRepository invoiceRepository, IPersonRepository personRepository, IPersonManager personManager, IMapper mapper)
 		{
 			this.invoiceRepository = invoiceRepository;
 			this.personRepository = personRepository;
+			this.personManager = personManager;
 			this.mapper = mapper;
 		}
 
@@ -62,11 +65,36 @@ namespace Invoices.Api.Managers
 		{
 			Invoice invoice = mapper.Map<Invoice>(invoiceDto);
 			invoice = invoiceRepository.Update(invoice);
-			//nebo
-			//Invoice invoice = invoiceRepository.Update(mapper.Map<Invoice>(invoiceDto));
 			return mapper.Map<InvoiceDto?>(invoice);
 		}
 
+		public List<InvoiceDto> GetPurchasesByIdentificationNumber(string identificationNumber)
+		{
+			IList<Person> peopleFound = personManager.GetByIdentificationNumber(identificationNumber);
+			List<InvoiceDto> purchasesList = new List<InvoiceDto>();
+			foreach (Person person in peopleFound)
+			{
+				purchasesList.AddRange(mapper.Map<List<InvoiceDto>>(person.Purchases));
+			}
+			return purchasesList;
+		}	
+		public List<InvoiceDto> GetSalesByIdentificationNumber(string identificationNumber)
+		{
+			IList<Person> peopleFound = personManager.GetByIdentificationNumber(identificationNumber);
+			List<InvoiceDto> salesList = new List<InvoiceDto>();
+			foreach (Person person in peopleFound)
+			{
+				salesList.AddRange(mapper.Map<List<InvoiceDto>>(person.Sales));
+			}
+			return salesList;
+		}
+		
+		public StatisticsDto GetStatistics()
+		{
+			IEnumerable<InvoiceDto> invoices = GetAllInvoices();
+			StatisticsDto statistics = new StatisticsDto();
 
+			///dodělat naplnění statDto...
+		}
 	}
 }

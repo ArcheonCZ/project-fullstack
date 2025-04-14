@@ -12,9 +12,11 @@ namespace Invoices.Api.Controllers
 	public class InvoicesController : ControllerBase
 	{
 		private readonly IInvoiceManager invoiceManager;
-		public InvoicesController(IInvoiceManager invoiceManager)
+		private readonly IPersonManager personManager;
+		public InvoicesController(IInvoiceManager invoiceManager, IPersonManager personManager)
 		{
 			this.invoiceManager = invoiceManager;
+			this.personManager = personManager;
 		}
 		[HttpGet]
 		public IEnumerable<InvoiceDto> GetInvoices()
@@ -25,6 +27,9 @@ namespace Invoices.Api.Controllers
 		[HttpPost]
 		public IActionResult AddInvoice([FromBody] InvoiceDto invoiceDto)
 		{
+			
+			if (personManager.GetPerson(invoiceDto.Buyer.PersonId) is  null || personManager.GetPerson(invoiceDto.Seller.PersonId) is  null)
+				return BadRequest();
 			InvoiceDto? createdInvoice = invoiceManager.AddInvoice(invoiceDto);
 			return StatusCode(StatusCodes.Status201Created, createdInvoice);
 		}
@@ -55,6 +60,32 @@ namespace Invoices.Api.Controllers
 		{
 			invoiceManager.DeleteInvoice(invoiceId);
 			return NoContent();
+		}
+
+		[HttpGet]
+		[Route("~/api/identification/{identificationNumber}/sales")]
+		public IEnumerable<InvoiceDto> GetSales(string identificationNumber)
+		{
+			return invoiceManager.GetSalesByIdentificationNumber(identificationNumber);
+			
+		}
+
+		[HttpGet]
+		[Route("~/api/identification/{identificationNumber}/purchases")]
+		public IEnumerable<InvoiceDto> GetPurchases(string identificationNumber)
+		{
+			return invoiceManager.GetPurchasesByIdentificationNumber(identificationNumber);
+		}
+
+		[HttpGet("statistics")]
+		public IActionResult GetStatistics()
+		{
+			StatisticsDto? statistics = invoiceManager.//GetInvoice(invoiceId);
+
+			if (statistics is null)
+				return NotFound();
+
+			return Ok(statistics);
 		}
 	}
 }

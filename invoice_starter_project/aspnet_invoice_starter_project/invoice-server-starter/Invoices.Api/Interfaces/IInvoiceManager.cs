@@ -1,4 +1,5 @@
 ﻿using Invoices.API.Models;
+using Invoices.Data.Models;
 
 namespace Invoices.Api.Interfaces
 {
@@ -9,5 +10,7 @@ namespace Invoices.Api.Interfaces
 		void DeleteInvoice (uint invoiceId);
 		InvoiceDto? GetInvoice (uint id);
 		InvoiceDto? EditInvoice (InvoiceDto invoiceDto);
+		public List<InvoiceDto> GetPurchasesByIdentificationNumber(string identificationNumber);
+		public List<InvoiceDto> GetSalesByIdentificationNumber(string identificationNumber);
 	}
 }
