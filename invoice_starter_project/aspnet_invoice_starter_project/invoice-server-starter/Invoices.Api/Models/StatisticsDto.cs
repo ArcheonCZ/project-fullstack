@@ -2,8 +2,8 @@
 {
 	public class StatisticsDto
 	{
-		public int CurrentYearSum { get; set; }
-		public int AllTimeSum { get; set; }
+		public decimal CurrentYearSum { get; set; }
+		public decimal AllTimeSum { get; set; }
 		public int InvoicesCount { get; set; }
 	}
 }

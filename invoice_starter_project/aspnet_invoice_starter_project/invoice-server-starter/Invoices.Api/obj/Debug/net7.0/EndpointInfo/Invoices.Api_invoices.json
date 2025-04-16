@@ -251,6 +251,18 @@
         }
       }
     },
+    "/api/Invoices/statistics": {
+      "get": {
+        "tags": [
+          "Invoices"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/": {
       "get": {
         "tags": [

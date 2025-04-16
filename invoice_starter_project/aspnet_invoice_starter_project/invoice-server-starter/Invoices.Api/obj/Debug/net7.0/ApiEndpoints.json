@@ -159,6 +159,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Invoices.Api.Controllers.InvoicesController",
+    "Method": "GetStatistics",
+    "RelativePath": "api/Invoices/statistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Invoices.Api.Controllers.PersonsController",
     "Method": "GetPersons",
     "RelativePath": "api/Persons",

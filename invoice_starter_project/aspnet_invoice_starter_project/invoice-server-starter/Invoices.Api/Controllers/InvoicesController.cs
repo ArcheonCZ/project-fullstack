@@ -2,6 +2,7 @@
 using Invoices.Api.Managers;
 using Invoices.Api.Models;
 using Invoices.API.Models;
+using Invoices.Data.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,6 +38,7 @@ namespace Invoices.Api.Controllers
 		[HttpGet("{invoiceId}")]
 		public IActionResult GetInvoice(uint invoiceId)
 		{
+
 			InvoiceDto? invoiceDto = invoiceManager.GetInvoice(invoiceId);
 
 			if (invoiceDto is null)
@@ -46,10 +48,12 @@ namespace Invoices.Api.Controllers
 		}
 
 		[HttpPut("{invoiceId}")]
-		public IActionResult EditInvoice([FromBody] InvoiceDto invoiceDto)
+		public IActionResult EditInvoice([FromBody] InvoiceDto invoiceDto, uint invoiceId)
 		{
+			InvoiceDto? invoiceExists = invoiceManager.GetInvoice(invoiceId);
 			InvoiceDto? editedInvoice = invoiceManager.EditInvoice(invoiceDto);
-			if (editedInvoice is null)
+				
+			if (editedInvoice is null || invoiceExists is null)
 				return NotFound();
 			return Ok(editedInvoice);
 		}
@@ -80,7 +84,7 @@ namespace Invoices.Api.Controllers
 		[HttpGet("statistics")]
 		public IActionResult GetStatistics()
 		{
-			StatisticsDto? statistics = invoiceManager.//GetInvoice(invoiceId);
+			StatisticsDto? statistics = invoiceManager.GetStatistics();
 
 			if (statistics is null)
 				return NotFound();

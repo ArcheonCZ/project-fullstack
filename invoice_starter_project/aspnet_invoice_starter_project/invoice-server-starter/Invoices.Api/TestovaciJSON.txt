@@ -1,0 +1,145 @@
+﻿[
+  {
+    "PersonId": 1,
+    "Name": "Jan Novák",
+    "IdentificationNumber": "12345678",
+    "TaxNumber": "CZ12345678",
+    "AccountNumber": "1234567890",
+    "BankCode": "0800",
+    "Iban": "CZ6508000000192000145399",
+    "Telephone": "+420123456789",
+    "Mail": "jan.novak@example.com",
+    "Street": "Hlavní 123",
+    "Zip": "11000",
+    "City": "Praha",
+    "Note": "Stálý zákazník",
+    "Country": "CZECHIA"
+  },
+  {
+    "PersonId": 2,
+    "Name": "Petra Svobodová",
+    "IdentificationNumber": "87654321",
+    "TaxNumber": "CZ87654321",
+    "AccountNumber": "9876543210",
+    "BankCode": "0300",
+    "Iban": "CZ1203000000000198765432",
+    "Telephone": "+420987654321",
+    "Mail": "petra.svobodova@example.com",
+    "Street": "Lidická 45",
+    "Zip": "60200",
+    "City": "Brno",
+    "Note": "Dodavatel",
+    "Country": "CZECHIA"
+  },
+  {
+    "PersonId": 3,
+    "Name": "Martin Dvořák",
+    "IdentificationNumber": "13579246",
+    "TaxNumber": "CZ13579246",
+    "AccountNumber": "2468135790",
+    "BankCode": "2010",
+    "Iban": "CZ4820100000000246813579",
+    "Telephone": "+420777888999",
+    "Mail": "martin.dvorak@example.com",
+    "Street": "Náměstí Svobody 8",
+    "Zip": "60200",
+    "City": "Brno",
+    "Note": "Externí konzultant",
+   "Country": "CZECHIA"
+  },
+  {
+    "PersonId": 4,
+    "Name": "Lucie Horáková",
+    "IdentificationNumber": "24681357",
+    "TaxNumber": "CZ24681357",
+    "AccountNumber": "1357924680",
+    "BankCode": "5500",
+    "Iban": "CZ2755000000001357924680",
+    "Telephone": "+420606707808",
+    "Mail": "lucie.horakova@example.com",
+    "Street": "Masarykova 14",
+    "Zip": "77900",
+    "City": "Olomouc",
+    "Note": "Zahraniční klient",
+    "Country": "SLOVAKIA"
+  },
+  {
+    "PersonId": 5,
+    "Name": "Tomáš Král",
+    "IdentificationNumber": "99887766",
+    "TaxNumber": "CZ99887766",
+    "AccountNumber": "1020304050",
+    "BankCode": "0100",
+    "Iban": "CZ0901000000001020304050",
+    "Telephone": "+420111222333",
+    "Mail": "tomas.kral@example.com",
+    "Street": "Křižíkova 89",
+    "Zip": "18600",
+    "City": "Praha",
+    "Note": "VIP klient",
+    "Country": "CZECHIA"
+  }
+]
+
+
+////////////////////////////////////
+///////////////////faktury
+///////////////////////////////////
+
+[
+  {
+    "invoiceNumber": 2023001,
+    "seller": { "_id": 1 },
+    "buyer": { "_id": 4 },
+    "issued": "2023-07-23",
+    "dueDate": "2023-07-30",
+    "product": "Článek",
+    "price": 100,
+    "vat": 21,
+    "note": "Tvorba Spring článků"
+  },
+  {
+    "invoiceNumber": 2023002,
+    "seller": { "_id": 2 },
+    "buyer": { "_id": 5 },
+    "issued": "2023-08-01",
+    "dueDate": "2023-08-08",
+    "product": "Překlad dokumentace",
+    "price": 200,
+    "vat": 21,
+    "note": "Překlad manuálu do AJ"
+  },
+  {
+    "invoiceNumber": 2023003,
+    "seller": { "_id": 3 },
+    "buyer": { "_id": 1 },
+    "issued": "2023-09-10",
+    "dueDate": "2023-09-17",
+    "product": "Konzultace",
+    "price": 1500,
+    "vat": 15,
+    "note": "IT konzultace"
+  },
+  {
+    "invoiceNumber": 2023004,
+    "seller": { "_id": 4 },
+    "buyer": { "_id": 2 },
+    "issued": "2023-10-05",
+    "dueDate": "2023-10-12",
+    "product": "Design loga",
+    "price": 850,
+    "vat": 21,
+    "note": "Grafické práce"
+  },
+  {
+    "invoiceNumber": 2023005,
+    "seller": { "_id": 5 },
+    "buyer": { "_id": 3 },
+    "issued": "2023-11-20",
+    "dueDate": "2023-11-27",
+    "product": "Vývoj modulu",
+    "price": 3500,
+    "vat": 21,
+    "note": "Modul do interní aplikace"
+  }
+]

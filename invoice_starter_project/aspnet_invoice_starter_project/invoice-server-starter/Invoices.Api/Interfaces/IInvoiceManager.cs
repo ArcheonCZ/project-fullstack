@@ -1,4 +1,5 @@
-﻿using Invoices.API.Models;
+﻿using Invoices.Api.Models;
+using Invoices.API.Models;
 using Invoices.Data.Models;
 
 namespace Invoices.Api.Interfaces
@@ -12,5 +13,6 @@ namespace Invoices.Api.Interfaces
 		InvoiceDto? EditInvoice (InvoiceDto invoiceDto);
 		public List<InvoiceDto> GetPurchasesByIdentificationNumber(string identificationNumber);
 		public List<InvoiceDto> GetSalesByIdentificationNumber(string identificationNumber);
+		public StatisticsDto GetStatistics();
 	}
 }

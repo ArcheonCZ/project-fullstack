@@ -13,6 +13,11 @@ public class AutomapperConfigurationProfile : Profile
     {
         CreateMap<Person, PersonDto>();
         CreateMap<PersonDto, Person>();
-        CreateMap<Invoice,InvoiceDto>().ReverseMap();
-    }
+        CreateMap<Invoice,InvoiceDto>();
+        CreateMap<InvoiceDto,Invoice>()
+            .ForMember(dest => dest.BuyerId, opt => opt.MapFrom(src => src.Buyer.PersonId))
+			.ForMember(dest => dest.Buyer, opt => opt.Ignore())
+            .ForMember(dest => dest.SellerId, opt => opt.MapFrom(src => src.Seller.PersonId))
+			.ForMember(dest => dest.Seller, opt => opt.Ignore());
+	}
 }

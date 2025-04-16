@@ -6,4 +6,5 @@ změním buyer na 2 a seller na 4 a zůstane buyer 1 (s údaji) a seller 2 (bez 
 ///// pokud upravím faktutu s default hodnotama (nuly a jména datových typů), vyytvoří se mi nová (jako u Person) a místo nuly u seller/buyer mi vytvoří 
 dva nové uživatele --- dát check zda existuje Person 
 
-////Měním invoiceDto a to má celý objekt Person - těžko mu měnit id --- nemělo by tedy InvoiceDto mít BuyerId raději??? nebo dělat check až třeba v frontendu? nevím
+////Měním invoiceDto a to má celý objekt Person - těžko mu měnit id --- nemělo by tedy InvoiceDto mít BuyerId raději??? nebo dělat check až třeba v frontendu? 
+///asi jsem vyřešil v mapování -- otestovat

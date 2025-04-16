@@ -88,13 +88,20 @@ namespace Invoices.Api.Managers
 			}
 			return salesList;
 		}
-		
+
 		public StatisticsDto GetStatistics()
 		{
 			IEnumerable<InvoiceDto> invoices = GetAllInvoices();
-			StatisticsDto statistics = new StatisticsDto();
+			StatisticsDto statisticsDto = new StatisticsDto();
 
-			///dodělat naplnění statDto...
+			foreach (InvoiceDto invoice in invoices)
+			{
+				if (invoice.Issued.Year == DateTime.Now.Year)
+					statisticsDto.CurrentYearSum = invoice.Price;
+				statisticsDto.AllTimeSum += invoice.Price;
+				statisticsDto.InvoicesCount++;
+			}
+			return statisticsDto;
 		}
 	}
 }
