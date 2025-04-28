@@ -136,7 +136,7 @@
       },
       {
         "Name": "invoiceId",
-        "Type": "",
+        "Type": "System.UInt32",
         "IsRequired": true
       }
     ],

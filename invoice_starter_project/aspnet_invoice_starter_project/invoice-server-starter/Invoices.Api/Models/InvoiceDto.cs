@@ -6,12 +6,15 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Invoices.API.Models
 {
 	public class InvoiceDto
 	{
+		[JsonPropertyName("_id")]
+		public uint PersonId { get; set; }
 		public DateTime Issued { get; set; }
 		public DateTime DueTime { get; set; }
 		public decimal Price { get; set; }
