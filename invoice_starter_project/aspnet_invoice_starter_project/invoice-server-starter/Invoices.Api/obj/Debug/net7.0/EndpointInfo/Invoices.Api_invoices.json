@@ -447,6 +447,14 @@
       "InvoiceDto": {
         "type": "object",
         "properties": {
+          "_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "invoiceNumber": {
+            "type": "integer",
+            "format": "int32"
+          },
           "issued": {
             "type": "string",
             "format": "date-time"

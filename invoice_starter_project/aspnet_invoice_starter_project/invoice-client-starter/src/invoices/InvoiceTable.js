@@ -14,7 +14,7 @@ const InvoiceTable = ({ label, items, deleteInvoice }) => {
                 <thead>
                     <tr>
                         <th>#</th>
-                        
+                        <th>_id</th>
                         <th>Název</th>
                         <th>Cena</th>
                         <th>Prodávající</th>
@@ -26,6 +26,7 @@ const InvoiceTable = ({ label, items, deleteInvoice }) => {
                     {items.map((item, index) => (
                         <tr key={index + 1}>
                             <td>{index + 1}</td>
+                            <td>{item._id}</td> 
                             <td>{item.product}</td>
                             <td>{item.price}</td>
                             <td>{item.seller.name}</td>

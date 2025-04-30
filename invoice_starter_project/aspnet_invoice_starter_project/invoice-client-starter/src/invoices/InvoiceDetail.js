@@ -9,7 +9,7 @@ import {apiGet} from "../utils/api";
 const InvoiceDetail = () => {
     const {id} = useParams();
     const [invoice, setInvoice] = useState({});
-
+ 
     useEffect(() => {
         apiGet("/api/Invoices/"+id)
         .then((data)=>{
@@ -19,14 +19,14 @@ const InvoiceDetail = () => {
             console.error(error);
         });
     }, [id]);
-   
+
 
     return (
         <>
             <div>
                 <h1>Detail faktury</h1>
                 <hr/>
-                <h3>{invoice.product} </h3>
+                <h3>{invoice.product} - {invoice.invoiceNumber}</h3>
                 <p>
                     <strong>Vytvořena:</strong>
                     <br/>
@@ -50,7 +50,8 @@ const InvoiceDetail = () => {
                 <p>
                     <strong>Prodávající:</strong>
                     <br/>
-                    {invoice.seller}
+                    {/* <pre>{JSON.stringify(invoice.seller, null, 2)}</pre> */}
+                    {invoice.seller?.name}
                     {/* , 
                     {person.city},
                     {person.zip}, {country} */}
@@ -58,7 +59,7 @@ const InvoiceDetail = () => {
                 <p>
                     <strong>Kupující:</strong>
                     <br/>
-                    {invoice.buyer}
+                    {invoice.buyer?.name}
                 </p>
                 <p>
                     <strong>Poznámka:</strong>

@@ -14,7 +14,8 @@ namespace Invoices.API.Models
 	public class InvoiceDto
 	{
 		[JsonPropertyName("_id")]
-		public uint PersonId { get; set; }
+		public uint InvoiceId { get; set; }
+		public int InvoiceNumber { get; set; }
 		public DateTime Issued { get; set; }
 		public DateTime DueTime { get; set; }
 		public decimal Price { get; set; }
