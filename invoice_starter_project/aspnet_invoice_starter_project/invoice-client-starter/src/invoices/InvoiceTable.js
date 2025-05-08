@@ -29,8 +29,8 @@ const InvoiceTable = ({ label, items, deleteInvoice }) => {
                             <td>{item._id}</td> 
                             <td>{item.product}</td>
                             <td>{item.price}</td>
-                            <td>{item.seller.name}</td>
-                            <td>{item.buyer.name}</td>
+                            <td>{item.seller?.name}</td>
+                            <td>{item.buyer?.name}</td>
                             <td>
                                 <div className="btn-group">
                                     <Link

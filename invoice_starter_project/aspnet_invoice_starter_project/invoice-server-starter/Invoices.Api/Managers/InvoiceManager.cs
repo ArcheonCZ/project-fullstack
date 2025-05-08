@@ -28,6 +28,11 @@ namespace Invoices.Api.Managers
 			IList<Invoice> allInvoices = invoiceRepository.GetAll();
 			return mapper.Map<IList<InvoiceDto>>(allInvoices);
 		}
+		public IList<InvoiceDto> GetAllInvoices(InvoiceFilterDto filterDto)
+		{
+			IList<Invoice> invoices = invoiceRepository.GetAll(filterDto.Product, filterDto.MinPrice, filterDto.Limit);
+			return mapper.Map<IList<InvoiceDto>>(invoices);
+		}
 
 		public InvoiceDto GetInvoice(uint invoiceId)
 		{
@@ -40,19 +45,20 @@ namespace Invoices.Api.Managers
 
 		public InvoiceDto AddInvoice(InvoiceDto invoiceDto)
 		{
+			Console.WriteLine("manager zacatek - buyer.id: " + invoiceDto.Buyer.PersonId + ", seller id: " + invoiceDto.Seller.PersonId);
 			Invoice invoice = mapper.Map<Invoice>(invoiceDto);
 			invoice.InvoiceId = default;
-			invoice.BuyerId = invoice.Buyer?.PersonId;
-			invoice.SellerId = invoice.Seller?.PersonId;
-			//Person? buyer = invoice.Buyer;
-			//Person? seller = invoice.Seller;
+			invoice.BuyerId = invoiceDto.Buyer?.PersonId;
+			invoice.SellerId = invoiceDto.Seller?.PersonId;
+
+			Console.WriteLine("seller name pred zapisem do repo: " + invoice.Seller?.Name);
 			invoice.Buyer = null;
 			invoice.Seller = null;
 			Invoice addedInvoice = invoiceRepository.Insert(invoice);
-			//addedInvoice.Buyer = buyer;
-			//addedInvoice.Seller = seller;
 			addedInvoice.Buyer = personRepository.FindById(invoice.BuyerId);
 			addedInvoice.Seller = personRepository.FindById(invoice.SellerId);
+			Console.WriteLine(addedInvoice.InvoiceNumber);
+			Console.WriteLine("seller name po zapisu do repo: "+addedInvoice.Seller?.Name);
 			return mapper.Map<InvoiceDto>(addedInvoice);
 		}
 
@@ -77,7 +83,7 @@ namespace Invoices.Api.Managers
 				purchasesList.AddRange(mapper.Map<List<InvoiceDto>>(person.Purchases));
 			}
 			return purchasesList;
-		}	
+		}
 		public List<InvoiceDto> GetSalesByIdentificationNumber(string identificationNumber)
 		{
 			IList<Person> peopleFound = personManager.GetByIdentificationNumber(identificationNumber);
@@ -103,5 +109,6 @@ namespace Invoices.Api.Managers
 			}
 			return statisticsDto;
 		}
+	
 	}
 }

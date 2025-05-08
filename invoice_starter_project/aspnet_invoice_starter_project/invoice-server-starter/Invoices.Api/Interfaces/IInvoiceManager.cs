@@ -14,5 +14,6 @@ namespace Invoices.Api.Interfaces
 		public List<InvoiceDto> GetPurchasesByIdentificationNumber(string identificationNumber);
 		public List<InvoiceDto> GetSalesByIdentificationNumber(string identificationNumber);
 		public StatisticsDto GetStatistics();
+		IList<InvoiceDto> GetAllInvoices(InvoiceFilterDto filterDto);
 	}
 }

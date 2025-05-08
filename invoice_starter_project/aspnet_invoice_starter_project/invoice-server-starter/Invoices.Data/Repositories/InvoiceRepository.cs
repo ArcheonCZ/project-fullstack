@@ -8,11 +8,29 @@ using System.Threading.Tasks;
 
 namespace Invoices.Data.Repositories
 {
-	public class InvoiceRepository: BaseRepository<Invoice>, IInvoiceRepository
+	public class InvoiceRepository : BaseRepository<Invoice>, IInvoiceRepository
 	{
-		public InvoiceRepository (InvoicesDbContext invoicesDbContext): base (invoicesDbContext)
+		public InvoiceRepository(InvoicesDbContext invoicesDbContext) : base(invoicesDbContext)
 		{
 
+		}
+
+		public IList<Invoice> GetAll(string? product = null, int? limit = null, int? minPrice = null)
+		{
+			var query = dbSet.AsQueryable();
+			if (product is not null)
+			{
+				query = query.Where(i => i.Product == product);
+			}
+			if (minPrice is not null)
+			{
+				query = query.Where(i => i.Price >= minPrice);
+			}
+			if (limit is not null)
+			{
+				query = query.Take(limit.Value);
+			}
+			return query.ToList();
 		}
 
 	}

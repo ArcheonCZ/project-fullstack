@@ -19,7 +19,7 @@ const InvoiceForm = () => {
         seller: "",
         buyer: "",
         issued: "",
-        dueDate: "",
+        dueTime: "",
         product: "",
         price: "",
         vat: "",
@@ -39,6 +39,24 @@ const InvoiceForm = () => {
             apiGet("/api/persons").then((data) => setPersons(data));
     }, []);
 
+    ///nastavení prvního záznamu jako defaultní
+
+    useEffect(() => {
+        if (persons && persons.length > 0) {
+            setInvoice((prev) => ({
+                ...prev,
+                seller: prev.seller ? { _id: prev.seller._id } : { _id: persons[0]._id },
+                buyer: prev.buyer ? { _id: prev.buyer._id } : { _id: persons[0]._id },
+                // buyer: { _id:prev.buyer._id || persons[0]._id,
+                // setInvoice({...invoice,buyer: { _id: Number(e.target.value) }});
+            }));
+            
+        }
+        else {
+            console.log("persons je nula...");
+        }
+    }, [persons]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -47,6 +65,7 @@ const InvoiceForm = () => {
                 setSent(true);
                 setSuccess(true);
                 navigate("/invoices");
+                console.log("odeslaná faktura: ", invoice);
             })
             .catch((error) => {
                 console.log(error.message);
@@ -102,13 +121,13 @@ const InvoiceForm = () => {
                 <InputField
                     required={true}
                     type="date"
-                    name="dueDate"
+                    name="dueTime"
                     min="3"
                     label="Datum splatnosti"
                     prompt="Zadejte datum splatnosti faktury"
-                    value={invoice.dueDate}
+                    value={invoice.dueTime}
                     handleChange={(e) => {
-                        setInvoice({...invoice, dueDate: e.target.value});
+                        setInvoice({...invoice, dueTime: e.target.value});
                     }}
                 />
 
@@ -135,12 +154,21 @@ const InvoiceForm = () => {
                         setInvoice({...invoice, vat: e.target.value});
                     }}
                 />
-
+                  <InputField
+                    required={true}
+                    type="text"
+                    name="note"
+                    label="Název"
+                    prompt="Zadejte název služby"
+                    value={invoice.product}
+                    handleChange={(e) => {
+                        setInvoice({...invoice, product: e.target.value});
+                    }}
+                />
                 <InputField
                     required={true}
                     type="text"
                     name="note"
-                    min="3"
                     label="Poznámka"
                     prompt="Zadejte poznámku"
                     value={invoice.note}
@@ -157,22 +185,30 @@ const InvoiceForm = () => {
                     value={invoice.buyer?._id}
                     required={true}
                     handleChange={(e) => {
-                        setInvoice({ ...invoice, buyer: e.target.value });
+                        console.log(e.target.value);
+                        // const selectedBuyer = persons.find(p => p._id === Number(e.target.value));
+                        // if (!selectedBuyer) {
+                        //     console.warn("Nebyl nalezen žádný buyer s ID", e.target.value);
+                        // }
+                        // console.log("Vybraný buyer:", selectedBuyer);
+                        // setInvoice({ ...invoice, buyer: selectedBuyer || null });
+                        setInvoice({...invoice,buyer: { _id: Number(e.target.value) }});
                     }}
-                />  
+                    />  
                 <InputSelect
                     name="seller"
                     label="Dodavatel"
                     items={persons}
                     prompt="Vyberte dodavatele"
-                    value={invoice.seller?._id || ''}
+                    value={invoice.seller?._id}
                     required={true}
                     handleChange={(e) => {
-                        setInvoice({ ...invoice, seller: e.target.value });
+                    console.log(e.target.value);
+                    setInvoice({...invoice,seller: { _id: Number(e.target.value) }});
                     }}
-                /> //////////////tady se musí opravit error 400
+                /> 
                
-
+               
                 <input type="submit" className="btn btn-primary my-2" value="Uložit"/>
             </form>
         </div>

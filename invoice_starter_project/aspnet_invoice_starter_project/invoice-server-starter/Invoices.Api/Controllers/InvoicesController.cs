@@ -1,9 +1,6 @@
 ﻿using Invoices.Api.Interfaces;
-using Invoices.Api.Managers;
 using Invoices.Api.Models;
 using Invoices.API.Models;
-using Invoices.Data.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Invoices.Api.Controllers
@@ -19,18 +16,24 @@ namespace Invoices.Api.Controllers
 			this.invoiceManager = invoiceManager;
 			this.personManager = personManager;
 		}
+		//[HttpGet]
+		//public IEnumerable<InvoiceDto> GetInvoices()
+		//{
+		//	return invoiceManager.GetAllInvoices();
+		//}
 		[HttpGet]
-		public IEnumerable<InvoiceDto> GetInvoices()
+		public IEnumerable<InvoiceDto> GetInvoices([FromQuery] InvoiceFilterDto filter)
 		{
-			return invoiceManager.GetAllInvoices();
+			return invoiceManager.GetAllInvoices(filter);
 		}
 
 		[HttpPost]
 		public IActionResult AddInvoice([FromBody] InvoiceDto invoiceDto)
 		{
-			
-			if (personManager.GetPerson(invoiceDto.Buyer.PersonId) is  null || personManager.GetPerson(invoiceDto.Seller.PersonId) is  null)
+
+			if (personManager.GetPerson(invoiceDto.Buyer.PersonId) is null || personManager.GetPerson(invoiceDto.Seller.PersonId) is null)
 				return BadRequest();
+			Console.WriteLine("controller buyer.id: "+invoiceDto.Buyer.PersonId + ", seller id: "+ invoiceDto.Seller.PersonId);
 			InvoiceDto? createdInvoice = invoiceManager.AddInvoice(invoiceDto);
 			return StatusCode(StatusCodes.Status201Created, createdInvoice);
 		}
@@ -52,7 +55,7 @@ namespace Invoices.Api.Controllers
 		{
 			InvoiceDto? invoiceExists = invoiceManager.GetInvoice(invoiceId);
 			InvoiceDto? editedInvoice = invoiceManager.EditInvoice(invoiceDto);
-				
+
 			if (editedInvoice is null || invoiceExists is null)
 				return NotFound();
 			return Ok(editedInvoice);
@@ -71,7 +74,7 @@ namespace Invoices.Api.Controllers
 		public IEnumerable<InvoiceDto> GetSales(string identificationNumber)
 		{
 			return invoiceManager.GetSalesByIdentificationNumber(identificationNumber);
-			
+
 		}
 
 		[HttpGet]
@@ -91,5 +94,6 @@ namespace Invoices.Api.Controllers
 
 			return Ok(statistics);
 		}
+		
 	}
 }
