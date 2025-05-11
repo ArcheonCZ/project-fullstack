@@ -5,6 +5,7 @@ import {useParams} from "react-router-dom";
 
 import {apiGet} from "../utils/api";
 import Country from "./Country";
+import PersonStatistics from "./PersonStatistics";
 
 const PersonDetail = () => {
     const {id} = useParams();
@@ -19,11 +20,13 @@ const PersonDetail = () => {
             console.error(error);
         });
     }, [id]);
+    //console.log("person detail - identificationNumber: "+person.identificationNumber)
     const country = Country.CZECHIA === person.country ? "Česká republika" : "Slovensko";
 
     return (
         <>
-            <div>
+            {/* <div className="row"> */}
+                <div >
                 <h1>Detail osoby</h1>
                 <hr/>
                 <h3>{person.name} ({person.identificationNumber})</h3>
@@ -58,7 +61,14 @@ const PersonDetail = () => {
                     <br/>
                     {person.note}
                 </p>
+                </div>
+            <div>
+                <PersonStatistics identificationNumber={person.identificationNumber} type="purchases"/>
             </div>
+            <div>
+                <PersonStatistics identificationNumber={person.identificationNumber} type="sales"/>
+            </div>
+             {/* </div> */}
         </>
     );
 };

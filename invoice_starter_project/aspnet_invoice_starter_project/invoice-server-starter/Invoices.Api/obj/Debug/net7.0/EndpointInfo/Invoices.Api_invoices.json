@@ -19,7 +19,7 @@
             }
           },
           {
-            "name": "Limit",
+            "name": "MinPrice",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -27,7 +27,7 @@
             }
           },
           {
-            "name": "MinPrice",
+            "name": "Limit",
             "in": "query",
             "schema": {
               "type": "integer",

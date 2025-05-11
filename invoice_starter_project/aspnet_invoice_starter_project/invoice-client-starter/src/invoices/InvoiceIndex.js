@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {apiDelete, apiGet} from "../utils/api";
 import InvoiceTable from "./InvoiceTable";
-import StatisticsOverAll from "../statistics/StatisticsOverAll";
+import Statistics from "../statistics/StatisticsOverAll";
 
 const InvoiceIndex = () => {
     const [invoices, setInvoices] = useState([]);
@@ -14,6 +14,7 @@ const InvoiceIndex = () => {
             alert(error.message)
         }
         setInvoices(invoices.filter((item) => item._id !== id));
+         alert("Smazána faktura s id: "+id);
     };
 
     useEffect(() => {
@@ -22,7 +23,7 @@ const InvoiceIndex = () => {
 
     return (
         <div>
-            <StatisticsOverAll/>
+            <Statistics/>
             <h1>Seznam faktur</h1>
             <InvoiceTable
                 deleteInvoice={deleteInvoice}
