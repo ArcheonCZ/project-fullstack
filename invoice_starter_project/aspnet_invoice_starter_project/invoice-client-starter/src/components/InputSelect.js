@@ -28,7 +28,7 @@ export function InputSelect(props) {
         ) : (
           /* prázdná hodnota povolená (pro filtrování přehledu) */
           <option key={0} value={emptySelected}>
-            ({props.prompt})
+            -- {props.prompt} --
           </option>
         )}
 

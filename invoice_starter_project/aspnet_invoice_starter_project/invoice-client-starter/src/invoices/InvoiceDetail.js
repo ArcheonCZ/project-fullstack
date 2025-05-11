@@ -2,7 +2,7 @@
 
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-
+import dateStringFormatter from "../utils/dateStringFormatter";
 import {apiGet} from "../utils/api";
 
 
@@ -30,12 +30,12 @@ const InvoiceDetail = () => {
                 <p>
                     <strong>Vytvořena:</strong>
                     <br/>
-                    {invoice.issued}
+                    {dateStringFormatter(invoice.issued)}
                 </p>
                 <p>
                     <strong>Splatnost:</strong>
                     <br/>
-                    {invoice.dueTime}
+                    {dateStringFormatter(invoice.dueTime)}
                 </p>
                 <p>
                     <strong>Cena:</strong>

@@ -46,9 +46,18 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
 
 	public TEntity Update(TEntity entity)
 	{
-		EntityEntry<TEntity> entityEntry = dbSet.Update(entity);
+		var existingEntity = FindById((uint)GetPrimaryKey(entity));
+
+		if (existingEntity == null)
+		{
+			throw new InvalidOperationException("Entity not found.");
+		}
+
+		//EntityEntry<TEntity> entityEntry = dbSet.Update(entity);
+		invoicesDbContext.Entry(existingEntity).CurrentValues.SetValues(entity);
 		invoicesDbContext.SaveChanges();
-		return entityEntry.Entity;
+		//return entityEntry.Entity;
+		return existingEntity;
 	}
 
 	public void Delete(uint id)
@@ -68,5 +77,13 @@ public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : 
 			invoicesDbContext.Entry(entity).State = EntityState.Unchanged;
 			throw;
 		}
+	}
+
+	private object GetPrimaryKey(TEntity entity)
+	{
+		var keyName = invoicesDbContext.Model.FindEntityType(typeof(TEntity)).FindPrimaryKey().Properties
+			.Select(x => x.Name).Single();
+
+		return entity.GetType().GetProperty(keyName).GetValue(entity, null);
 	}
 }

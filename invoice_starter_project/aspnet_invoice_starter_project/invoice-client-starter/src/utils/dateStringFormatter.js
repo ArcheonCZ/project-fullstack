@@ -2,7 +2,8 @@
 
 export const dateStringFormatter = (str, locale = false) => {
     const d = new Date(str);
-
+//console.log("dateStringFormatter, str: "+str)
+//console.log("dateStringFormatter, d: "+d)
     if (locale) {
         return d.toLocaleDateString("cs-CZ", {
             year: "numeric",

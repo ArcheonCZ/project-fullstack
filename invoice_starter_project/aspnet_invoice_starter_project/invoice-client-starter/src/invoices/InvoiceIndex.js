@@ -1,10 +1,7 @@
-
-
 import React, {useEffect, useState} from "react";
-
 import {apiDelete, apiGet} from "../utils/api";
-
 import InvoiceTable from "./InvoiceTable";
+import StatisticsOverAll from "../statistics/StatisticsOverAll";
 
 const InvoiceIndex = () => {
     const [invoices, setInvoices] = useState([]);
@@ -25,6 +22,7 @@ const InvoiceIndex = () => {
 
     return (
         <div>
+            <StatisticsOverAll/>
             <h1>Seznam faktur</h1>
             <InvoiceTable
                 deleteInvoice={deleteInvoice}

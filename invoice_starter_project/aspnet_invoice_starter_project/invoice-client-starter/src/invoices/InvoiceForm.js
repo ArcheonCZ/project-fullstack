@@ -6,10 +6,9 @@ import {useNavigate, useParams} from "react-router-dom";
 import {apiGet, apiPost, apiPut} from "../utils/api";
 
 import InputField from "../components/InputField";
-import InputCheck from "../components/InputCheck";
 import FlashMessage from "../components/FlashMessage";
 import InputSelect from "../components/InputSelect";
-
+import dateStringFormatter from "../utils/dateStringFormatter";
 
 const InvoiceForm = () => {
     const navigate = useNavigate();
@@ -33,29 +32,31 @@ const InvoiceForm = () => {
     useEffect(() => {
         if (id) {
             apiGet("/api/invoices/" + id).then((data) => setInvoice(data));
+            
         }
     }, [id]);
     useEffect(() => {
             apiGet("/api/persons").then((data) => setPersons(data));
+            console.log(invoice.dueTime)
+            console.log(invoice.name)
     }, []);
 
     ///nastavení prvního záznamu jako defaultní
 
-    useEffect(() => {
-        if (persons && persons.length > 0) {
-            setInvoice((prev) => ({
-                ...prev,
-                seller: prev.seller ? { _id: prev.seller._id } : { _id: persons[0]._id },
-                buyer: prev.buyer ? { _id: prev.buyer._id } : { _id: persons[0]._id },
-                // buyer: { _id:prev.buyer._id || persons[0]._id,
-                // setInvoice({...invoice,buyer: { _id: Number(e.target.value) }});
-            }));
+    // useEffect(() => {
+    //     if (persons && persons.length > 0) {
+    //         setInvoice((prev) => ({
+    //             ...prev,
+    //             seller: prev.seller ? { _id: prev.seller._id } : { _id: persons[0]._id },
+    //             buyer: prev.buyer ? { _id: prev.buyer._id } : { _id: persons[0]._id },
+    //          }));
             
-        }
-        else {
-            console.log("persons je nula...");
-        }
-    }, [persons]);
+    //     }
+    //     else {
+    //         console.log("persons je nula...(nenastavil jsem první záznam jako defaultní");
+
+    //     }
+    // }, [persons]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -112,7 +113,7 @@ const InvoiceForm = () => {
                     min="3"
                     label="Datum vystavení"
                     prompt="Zadejte datum vystavení faktury"
-                    value={invoice.issued}
+                    value={dateStringFormatter(invoice.issued)}
                     handleChange={(e) => {
                         setInvoice({...invoice, issued: e.target.value});
                     }}
@@ -125,7 +126,7 @@ const InvoiceForm = () => {
                     min="3"
                     label="Datum splatnosti"
                     prompt="Zadejte datum splatnosti faktury"
-                    value={invoice.dueTime}
+                    value={dateStringFormatter(invoice.dueTime)}
                     handleChange={(e) => {
                         setInvoice({...invoice, dueTime: e.target.value});
                     }}
@@ -182,8 +183,8 @@ const InvoiceForm = () => {
                     label="Odběratel"
                     items={persons}
                     prompt="Vyberte odběratele"
-                    value={invoice.buyer?._id}
-                    required={true}
+                    value={invoice.buyer?._id ?? ""}
+                    required={false}
                     handleChange={(e) => {
                         console.log(e.target.value);
                         // const selectedBuyer = persons.find(p => p._id === Number(e.target.value));
@@ -200,8 +201,8 @@ const InvoiceForm = () => {
                     label="Dodavatel"
                     items={persons}
                     prompt="Vyberte dodavatele"
-                    value={invoice.seller?._id}
-                    required={true}
+                    value={invoice.seller?._id ?? ""}
+                    required={false}
                     handleChange={(e) => {
                     console.log(e.target.value);
                     setInvoice({...invoice,seller: { _id: Number(e.target.value) }});
