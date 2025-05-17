@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.data\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.api\\managers\\invoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\managers\\invoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.api\\models\\invoicefilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\models\\invoicefilterdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\controllers\\invoicescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.api\\managers\\invoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\managers\\invoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.api\\interfaces\\iinvoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\interfaces\\iinvoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.data\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|solutionrelative:invoices.data\\repositories\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.data\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.api\\models\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\models\\persondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.api\\interfaces\\iinvoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99C16665-4F41-47DA-BF1E-2D843039939A}|Invoices.Api\\Invoices.Api.csproj|solutionrelative:invoices.api\\interfaces\\iinvoicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D70A37B-8C95-4BCF-9F50-CA4B7F3D0FF6}|Invoices.Data\\Invoices.Data.csproj|c:\\users\\dajab\\desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\invoices.data\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,11 +58,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 85,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "IInvoiceManager.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Api\\Interfaces\\IInvoiceManager.cs",
               "RelativeDocumentMoniker": "Invoices.Api\\Interfaces\\IInvoiceManager.cs",
@@ -70,11 +70,12 @@
               "RelativeToolTip": "Invoices.Api\\Interfaces\\IInvoiceManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T13:55:02.787Z"
+              "WhenOpened": "2025-05-08T13:55:02.787Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "InvoiceFilterDto.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Api\\Models\\InvoiceFilterDto.cs",
               "RelativeDocumentMoniker": "Invoices.Api\\Models\\InvoiceFilterDto.cs",
@@ -87,13 +88,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "InvoiceRepository.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs",
               "RelativeDocumentMoniker": "Invoices.Data\\Repositories\\InvoiceRepository.cs",
               "ToolTip": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs",
               "RelativeToolTip": "Invoices.Data\\Repositories\\InvoiceRepository.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAADwvyMAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAADwvxwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T17:40:36.024Z",
               "EditorCaption": ""
@@ -124,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "InvoiceDto.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Api\\Models\\InvoiceDto.cs",
               "RelativeDocumentMoniker": "Invoices.Api\\Models\\InvoiceDto.cs",
@@ -160,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "PersonDto.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Api\\Models\\PersonDto.cs",
               "RelativeDocumentMoniker": "Invoices.Api\\Models\\PersonDto.cs",
@@ -172,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "BaseRepository.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Data\\Repositories\\BaseRepository.cs",
               "RelativeDocumentMoniker": "Invoices.Data\\Repositories\\BaseRepository.cs",
@@ -180,25 +181,24 @@
               "RelativeToolTip": "Invoices.Data\\Repositories\\BaseRepository.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAA4wDMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T17:30:33.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T17:30:33.114Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "InvoicesController.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Api\\Controllers\\InvoicesController.cs",
               "RelativeDocumentMoniker": "Invoices.Api\\Controllers\\InvoicesController.cs",
               "ToolTip": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Api\\Controllers\\InvoicesController.cs",
               "RelativeToolTip": "Invoices.Api\\Controllers\\InvoicesController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T17:29:57.316Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "InvoiceManager.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Api\\Managers\\InvoiceManager.cs",
               "RelativeDocumentMoniker": "Invoices.Api\\Managers\\InvoiceManager.cs",

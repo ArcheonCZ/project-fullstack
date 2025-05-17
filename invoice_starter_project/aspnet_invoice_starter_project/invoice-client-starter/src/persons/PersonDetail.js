@@ -25,8 +25,8 @@ const PersonDetail = () => {
 
     return (
         <>
-            {/* <div className="row"> */}
-                <div >
+            
+            <div >
                 <h1>Detail osoby</h1>
                 <hr/>
                 <h3>{person.name} ({person.identificationNumber})</h3>
@@ -62,12 +62,16 @@ const PersonDetail = () => {
                     {person.note}
                 </p>
                 </div>
-            <div>
-                <PersonStatistics identificationNumber={person.identificationNumber} type="purchases"/>
-            </div>
-            <div>
-                <PersonStatistics identificationNumber={person.identificationNumber} type="sales"/>
-            </div>
+                <hr/>
+                <div>
+                    <h4>Nákupy</h4>
+                    <PersonStatistics identificationNumber={person.identificationNumber} type="purchases"/>
+                 </div>
+                <hr/>
+                <div>
+                    <h4>Prodeje</h4>
+                    <PersonStatistics identificationNumber={person.identificationNumber} type="sales"/>
+                </div>
              {/* </div> */}
         </>
     );

@@ -17,8 +17,8 @@ const InvoiceTable = ({ label, items, deleteInvoice }) => {
                         <th>_id</th>
                         <th>Název</th>
                         <th>Cena</th>
-                        <th>Prodávající</th>
-                        <th>Kupující</th>
+                        <th>Dodavatel</th>
+                        <th>Odběratel</th>
                         <th colSpan={3}>Akce</th>
                     </tr>
                 </thead>
@@ -28,7 +28,7 @@ const InvoiceTable = ({ label, items, deleteInvoice }) => {
                             <td>{index + 1}</td>
                             <td>{item._id}</td> 
                             <td>{item.product}</td>
-                            <td>{item.price}</td>
+                            <td>{item.price.toLocaleString('cs-CZ')}</td>
                             <td>{item.seller?.name}</td>
                             <td>{item.buyer?.name}</td>
                             <td>

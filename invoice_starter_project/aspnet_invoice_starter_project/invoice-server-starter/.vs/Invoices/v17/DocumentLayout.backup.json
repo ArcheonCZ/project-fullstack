@@ -82,8 +82,7 @@
               "RelativeToolTip": "Invoices.Api\\Models\\InvoiceFilterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-08T10:04:13.728Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-08T10:04:13.728Z"
             },
             {
               "$type": "Document",
@@ -91,9 +90,9 @@
               "Title": "InvoiceRepository.cs",
               "DocumentMoniker": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs",
               "RelativeDocumentMoniker": "Invoices.Data\\Repositories\\InvoiceRepository.cs",
-              "ToolTip": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs*",
-              "RelativeToolTip": "Invoices.Data\\Repositories\\InvoiceRepository.cs*",
-              "ViewState": "AgIAAA0AAAAAAAAAAADwvyEAAAAEAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\dajab\\Desktop\\project\\project-fullstack\\invoice_starter_project\\aspnet_invoice_starter_project\\invoice-server-starter\\Invoices.Data\\Repositories\\InvoiceRepository.cs",
+              "RelativeToolTip": "Invoices.Data\\Repositories\\InvoiceRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAADwvxwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-05T17:40:36.024Z",
               "EditorCaption": ""
@@ -180,8 +179,7 @@
               "RelativeToolTip": "Invoices.Data\\Repositories\\BaseRepository.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAA4wDMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T17:30:33.114Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T17:30:33.114Z"
             },
             {
               "$type": "Document",
@@ -193,8 +191,7 @@
               "RelativeToolTip": "Invoices.Api\\Controllers\\InvoicesController.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T17:29:57.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T17:29:57.316Z"
             },
             {
               "$type": "Document",
@@ -206,8 +203,7 @@
               "RelativeToolTip": "Invoices.Api\\Managers\\InvoiceManager.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAgwCEAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T17:29:55.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-16T17:29:55.27Z"
             }
           ]
         },
