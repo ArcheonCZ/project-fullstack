@@ -15,25 +15,36 @@ namespace Invoices.Data.Repositories
 
 		}
 
-		public IList<Invoice> GetAll(string? product = null,  int? minPrice = null, int? limit = null)
+		public IList<Invoice> GetAll(string? product = null,  int? minPrice = null, int? limit = null, int? sellerId=null, int? buyerId=null)
 		{
 			var query = dbSet.AsQueryable();
+
 			if (product is not null)
 			{
 				query = query.Where(i => i.Product == product);
 			}
-		
 
 			if (minPrice is not null)
 			{
 				Console.WriteLine("minPrice: " + minPrice);
 				query = query.Where(i => i.Price >= minPrice);
 			}
+
 			if (limit is not null)
 			{
 				Console.WriteLine("limit: " + limit);
 				Console.WriteLine("limit.Value: " + limit.Value);
 				query = query.Take(limit.Value);
+			}
+
+			if (sellerId is not null)
+			{
+				query = query.Where(i => i.SellerId == sellerId);
+			}
+
+			if (buyerId is not null)
+			{
+				query = query.Where(i => i.BuyerId == buyerId);
 			}
 			return query.ToList();
 		}

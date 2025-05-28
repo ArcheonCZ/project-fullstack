@@ -33,6 +33,22 @@
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "SellerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "BuyerId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {

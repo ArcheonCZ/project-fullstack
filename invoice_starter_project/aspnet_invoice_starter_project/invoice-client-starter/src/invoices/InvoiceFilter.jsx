@@ -17,26 +17,8 @@ const InvoiceFilter = (props) => {
     return (
         <form onSubmit={handleSubmit}>
                 <div>
-                    {/* <div className="col">
-                        <InputSelect
-                            name="buyerID"
-                            items={props.personsList}
-                            handleChange={handleChange}
-                            label="Odběratel"
-                            prompt="nevybrán"
-                            value={filter.personsID}
-                        />
-                    </div>
-                    <div className="col">
-                        <InputSelect
-                            name="sellerID"
-                            items={props.personsList}
-                            handleChange={handleChange}
-                            label="Dodavatel"
-                            prompt="nevybrán"
-                            value={filter.personsID}
-                        />
-                    </div> */}
+
+
                     <div className="col">
                         <InputField
                             type="text"
@@ -70,7 +52,26 @@ const InvoiceFilter = (props) => {
                             value={filter.limit ? filter.limit : ''}
                         />
                     </div>
-                
+                    <div className="col">
+                        <InputSelect
+                            name="sellerID"
+                            items={props.personsList}
+                            handleChange={handleChange}
+                            label="Dodavatel"
+                            prompt="nevybrán"
+                            value={filter.personsID}
+                        />
+                    </div>
+                    <div className="col">
+                        <InputSelect
+                            name="buyerID"
+                            items={props.personsList}
+                            handleChange={handleChange}
+                            label="Odběratel"
+                            prompt="nevybrán"
+                            value={filter.personsID}
+                        />
+                    </div>
 
                 
                     <div className="col">

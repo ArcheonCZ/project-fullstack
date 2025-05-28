@@ -30,11 +30,11 @@ namespace Invoices.Api.Managers
 		}
 		public IList<InvoiceDto> GetAllInvoices(InvoiceFilterDto filterDto)
 		{
-			IList<Invoice> invoices = invoiceRepository.GetAll(filterDto.Product, filterDto.MinPrice, filterDto.Limit);
+			IList<Invoice> invoices = invoiceRepository.GetAll(filterDto.Product, filterDto.MinPrice, filterDto.Limit, filterDto.SellerId, filterDto.BuyerId);
 			return mapper.Map<IList<InvoiceDto>>(invoices);
 		}
 
-		public InvoiceDto GetInvoice(uint invoiceId)
+		public InvoiceDto? GetInvoice(uint invoiceId)
 		{
 			Invoice? invoice = invoiceRepository.FindById(invoiceId);
 			if (invoice is null)
@@ -45,20 +45,20 @@ namespace Invoices.Api.Managers
 
 		public InvoiceDto AddInvoice(InvoiceDto invoiceDto)
 		{
-			Console.WriteLine("manager zacatek - buyer.id: " + invoiceDto.Buyer.PersonId + ", seller id: " + invoiceDto.Seller.PersonId);
+			//Console.WriteLine("manager zacatek - buyer.id: " + invoiceDto.Buyer.PersonId + ", seller id: " + invoiceDto.Seller.PersonId);
 			Invoice invoice = mapper.Map<Invoice>(invoiceDto);
 			invoice.InvoiceId = default;
 			invoice.BuyerId = invoiceDto.Buyer?.PersonId;
 			invoice.SellerId = invoiceDto.Seller?.PersonId;
 
-			Console.WriteLine("seller name pred zapisem do repo: " + invoice.Seller?.Name);
+			//Console.WriteLine("seller name pred zapisem do repo: " + invoice.Seller?.Name);
 			invoice.Buyer = null;
 			invoice.Seller = null;
 			Invoice addedInvoice = invoiceRepository.Insert(invoice);
 			addedInvoice.Buyer = personRepository.FindById(invoice.BuyerId);
 			addedInvoice.Seller = personRepository.FindById(invoice.SellerId);
-			Console.WriteLine(addedInvoice.InvoiceNumber);
-			Console.WriteLine("seller name po zapisu do repo: "+addedInvoice.Seller?.Name);
+			//Console.WriteLine(addedInvoice.InvoiceNumber);
+			//Console.WriteLine("seller name po zapisu do repo: "+addedInvoice.Seller?.Name);
 			return mapper.Map<InvoiceDto>(addedInvoice);
 		}
 

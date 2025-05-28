@@ -36,7 +36,7 @@ public class PersonsController : ControllerBase
 	public IActionResult GetPerson(uint personId)
 	{
 		PersonDto? personDto = personManager.GetPerson(personId);
-		Console.WriteLine(personManager.IsHidden(personId));
+		//Console.WriteLine(personManager.IsHidden(personId));
 		if (personDto is null || personManager.IsHidden(personId).GetValueOrDefault(true))
 			return NotFound();
 
